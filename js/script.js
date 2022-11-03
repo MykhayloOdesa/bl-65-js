@@ -40,3 +40,28 @@
 // }
 
 // console.log(total);
+// Task 3
+//4. Напишіть код, який запитуватиме
+//Логін за допомогою prompt і логуватиме результат
+//В консоль браузера
+
+//Якщо відвідувач вводить "Адмін",
+//то prompt запитує пароль.
+//Якщо нічого не ввели або натиснута клавіша Esc
+//Вивести стороку "Скасовано"
+// В іншому випадку вивести рядок "Я вас не знаю"
+
+//Пароль перевіряти так:
+//Якщо введено пароль "Я головний",
+//то вивести рядок "Здрастуйте!"
+//інакше виводити рядок "Невірний пароль!"
+
+const userLogin = prompt("Login");
+if(userLogin === "Admin") {const userPassword = prompt ("Enter password")
+if(userPassword === "I am hungry") {
+    console.log("Hello");
+} else {console.log("Wrong passord");}
+} else if(userLogin === null) {
+    console.log("cancel")
+} else {console.log("I do not know")};
+
