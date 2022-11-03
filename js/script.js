@@ -5,7 +5,6 @@
 // показати через alert: "Вірно!"
 //інакше відобразити:"Не знаєте? ECMAScript!"
 
-
 // let userInput = prompt("Яка офіційна назва JavaScript?");
 // console.log(userInput);
 
@@ -20,7 +19,6 @@
 
 // alert(message);
 
-
 // task 2
 
 // Напишіть цикл, який виводить у консоль
@@ -32,7 +30,7 @@
 // let total = 0;
 
 // for (let i = max; i >= min; i -= 1){
-    
+
 //     if (i % 2 !== 0) {
 //        continue
 //     }
@@ -65,7 +63,6 @@
 //     console.log("cancel")
 // } else {console.log("I do not know")};
 
-
 // const userLogin = prompt("Login");
 // switch (userLogin) {
 //     case "Admin":
@@ -85,8 +82,6 @@
 //          console.log("I do not know");
 // }
 
-
-
 // Task 5
 // При завантаженні сторінки користувачеві пропонується
 //В prompt ввести число. Введення додається до значення
@@ -97,7 +92,6 @@
 //кнопку Cancel, показати alert з рядком "Загальна сума введених чисел дорівнює [число]."
 //Робити перевірку,що користувач ввів саме число,
 //а не довільний набір символів не потрібно.
-
 
 // let number = prompt("Enter number");
 // let total = 0;
@@ -116,8 +110,25 @@
 //введе число більше 100, або натисне кнопку
 //Скасування в prompt
 
-let number = prompt("введіть число більше 100");
-while (number < 100 && number !== null) {
-  number = prompt("введіть число більше 100");
-}
-console.log(number);
+// let number = prompt("введіть число більше 100");
+// while (number < 100 && number !== null) {
+//   number = prompt("введіть число більше 100");
+// }
+// console.log(number);
+
+//  TASK 7
+
+// Дано рядок, що складається із символів, наприклад, 'abcde'.
+// Перевірте, що першим символом цього рядка є буква 'a'.
+// Якщо це так - виведіть 'так', інакше виведіть 'ні'.
+
+// const string = "abcde";
+// if (string[0] === "a") {
+//   console.log("так");
+// } else {
+//   console.log("ні");
+// }
+
+const string = "abcde";
+const message = string.startsWith("d") ? "так" : "ні";
+console.log(message);
