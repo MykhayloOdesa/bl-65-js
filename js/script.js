@@ -99,11 +99,25 @@
 //а не довільний набір символів не потрібно.
 
 
-let number = prompt("Enter number");
-let total = 0;
-while (number) {
-  total += Number(number);
-  number = prompt('Enter number');
-}
-console.log(total);
+// let number = prompt("Enter number");
+// let total = 0;
+// while (number) {
+//   total += Number(number);
+//   number = prompt('Enter number');
+// }
+// console.log(total);
 
+//Task6
+// Напишіть цикл, який пропонує ввести
+//число більше 100 через prompt.
+//Якщо відвідувач ввів інше число - попросити
+//Ввести ще раз і так далі.
+//Цикл має питати число, поки відвідувач не
+//введе число більше 100, або натисне кнопку
+//Скасування в prompt
+
+let number = prompt("введіть число більше 100");
+while (number < 100 && number !== null) {
+  number = prompt("введіть число більше 100");
+}
+console.log(number);
