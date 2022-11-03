@@ -56,12 +56,31 @@
 //то вивести рядок "Здрастуйте!"
 //інакше виводити рядок "Невірний пароль!"
 
-const userLogin = prompt("Login");
-if(userLogin === "Admin") {const userPassword = prompt ("Enter password")
-if(userPassword === "I am hungry") {
-    console.log("Hello");
-} else {console.log("Wrong passord");}
-} else if(userLogin === null) {
-    console.log("cancel")
-} else {console.log("I do not know")};
+// const userLogin = prompt("Login");
+// if(userLogin === "Admin") {const userPassword = prompt ("Enter password")
+// if(userPassword === "I am hungry") {
+//     console.log("Hello");
+// } else {console.log("Wrong passord");}
+// } else if(userLogin === null) {
+//     console.log("cancel")
+// } else {console.log("I do not know")};
 
+
+// const userLogin = prompt("Login");
+// switch (userLogin) {
+//     case "Admin":
+//         const userPassword = prompt("Enter password");
+//         switch (userPassword) {
+//             case "I am hungry":
+//                 console.log("Hello");
+//                 break;
+//             default:
+//                 console.log("Wrong passord");
+//         }
+//         break;
+//     case null:
+//         console.log("cancel");
+//         break;
+//     default:
+//          console.log("I do not know");
+// }
