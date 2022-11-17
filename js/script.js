@@ -140,23 +140,23 @@
 
 // Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
 
-const books = [
-  {
-    title: "The Last Kingdom",
-    author: "Bernard Cornwell",
-    genres: ["adventure", "history"],
-  },
-  {
-    title: "Beside Still Waters",
-    author: "Robert Sheckley",
-    genres: ["fiction", "mysticism"],
-  },
-  {
-    title: "Redder Than Blood",
-    author: "Tanith Lee",
-    genres: ["horror", "mysticism", "adventure"],
-  },
-];
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
 // // Change code below this line
 // const allGenres = books
 //   .reduce((acc, elem) => [...acc, ...elem.genres], [])
@@ -165,13 +165,33 @@ const books = [
 
 // TASK 8
 
-const findAllGenres = (books) => {
-  return books
-    .reduce((acc, elem) => [...acc, ...elem.genres], [])
-    .reduce(
-      (acc, elem) => ({ ...acc, [elem]: acc[elem] ? (acc[elem] += 1) : 1 }),
-      {}
-    );
-};
+// const findAllGenres = (books) => {
+//   return books
+//     .reduce((acc, elem) => [...acc, ...elem.genres], [])
+//     .reduce(
+//       (acc, elem) => ({ ...acc, [elem]: acc[elem] ? (acc[elem] += 1) : 1 }),
+//       {}
+//     );
+// };
 
-console.log(findAllGenres(books));
+// console.log(findAllGenres(books));
+const vehicles = [
+  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
+];
+//1.Реалізувати фільтр за властивістю amount і отримати
+// Тільки назва моделі
+const filteredModels = vehicles.filter(({ amount }) => amount >= 12).map(({model}) => model);
+console.log(filteredModels);
+
+//2.Отримати машини на розпродажі і сортувати за зменшенням ціни
+const onSales = vehicles.filter(({onSale}) => onSale).sort((a, b) => b.price - a.price);
+ console.table(onSales);
