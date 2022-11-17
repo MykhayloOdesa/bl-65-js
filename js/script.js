@@ -135,3 +135,32 @@
 // const string = "abcde";
 // const message = string.startsWith("d") ? "так" : "ні";
 // console.log(message);
+
+// // Task7
+
+// Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
+// // Change code below this line
+// const allGenres = books
+//   .reduce((acc, elem) => [...acc, ...elem.genres], [])
+//   .reduce((acc, elem) => acc.includes(elem) ? acc : [...acc, elem], []);
+// console.log(allGenres);
+
+
