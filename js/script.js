@@ -163,4 +163,139 @@
 //   .reduce((acc, elem) => acc.includes(elem) ? acc : [...acc, elem], []);
 // console.log(allGenres);
 
+// task8
 
+// const a = [121, 144, 19, 161, 19, 144, 19, 11];
+// const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+
+// const same = function (a, b) {
+//   const sortA = [...a].sort((prev, next) => {
+//     return prev - next;
+//   });
+//   const sortB = [...b].sort((prev, next) => {
+//     return prev - next;
+//   });
+
+//   // const sortADouble = sortA.map((elem) => {return elem * elem})
+//   // for (let i = 0; i < sortADouble.length; i+=1) {
+//   //   if (sortADouble[i] !== sortB[i]) {
+//   //     return false
+//   //   }
+//   // }
+//   // return true
+
+//     return sortA.map((elem) => elem * elem).every((element, index) => element === sortB[index])
+
+//   console.log(sortA);
+//   console.log(sortB);
+//   console.log(sortADouble);
+// };
+
+// console.log(same(a, b));
+
+// task9
+
+const people = [
+  {
+    name: "Alex",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Eva",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Ivan",
+    know: ["Jhon", "Eva"],
+  },
+  {
+    name: "Jhon",
+    know: [],
+  },
+];
+//нарцис  'Jhon'
+const people2 = [
+  {
+    name: "Alex",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Jhon",
+    know: [],
+  },
+  {
+    name: "Eva",
+    know: [],
+  },
+  {
+    name: "Ivan",
+    know: ["Jhon", "Eva"],
+  },
+];
+//немає нарциса'
+const people3 = [
+  {
+    name: "Alex",
+    know: ["Alex", "Eva"],
+  },
+  {
+    name: "Jhon",
+    know: [],
+  },
+  {
+    name: "Eva",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Ivan",
+    know: ["Jhon", "Eva"],
+  },
+];
+//немає нарциса
+const people4 = [
+  {
+    name: "Alex",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Jhon",
+    know: ["Eva"],
+  },
+  {
+    name: "Eva",
+    know: ["Alex", "Jhon"],
+  },
+  {
+    name: "Ivan",
+    know: ["Jhon", "Eva"],
+  },
+];
+//немає нарциса'
+//Нарциса знають всі, нарцис незнає нікого
+
+const narName = (people) => {
+  const narc = people.find(({ know }) => know.length === 0);
+  if (!narc) {
+    console.log("немає нарциса");
+    return;
+  }
+  console.log(narc);
+  // const result = people.every(element) => { element.know.includes(narc.name) }
+  const result = people.every((element) => {
+    if (element.name === narc.name) {
+      return true;
+    }
+    return element.know.includes(narc.name);
+  });
+
+  if (result) {
+    console.log("нарцис:", narc.name);
+  } else {
+    console.log("немає нарциса");
+  }
+};
+
+narName(people);
+narName(people2);
+narName(people3);
+narName(people4);
