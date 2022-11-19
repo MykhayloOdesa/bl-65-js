@@ -136,9 +136,9 @@
 // const message = string.startsWith("d") ? "так" : "ні";
 // console.log(message);
 
-// // Task7
-
-// Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
+// // Task 7
+// // Дополни код так, чтобы в переменной allGenres был массив всех жанров книг(свойство genres)
+// // из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
 
 // const books = [
 //   {
@@ -160,10 +160,11 @@
 // // Change code below this line
 // const allGenres = books
 //   .reduce((acc, elem) => [...acc, ...elem.genres], [])
-//   .reduce((acc, elem) => acc.includes(elem) ? acc : [...acc, elem], []);
+//   .reduce((acc, elem) => (acc.includes(elem) ? acc : [...acc, elem]), []);
 // console.log(allGenres);
 
-// task8
+// // Task 8
+// // Потрібно перевірити "same" масиви числа з першого в квадраті дорівнюють числам другого
 
 // const a = [121, 144, 19, 161, 19, 144, 19, 11];
 // const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
@@ -176,15 +177,19 @@
 //     return prev - next;
 //   });
 
-//   // const sortADouble = sortA.map((elem) => {return elem * elem})
-//   // for (let i = 0; i < sortADouble.length; i+=1) {
+//   // const sortADouble = sortA.map((elem) => {
+//   //   return elem * elem;
+//   // });
+//   // for (let i = 0; i < sortADouble.length; i += 1) {
 //   //   if (sortADouble[i] !== sortB[i]) {
-//   //     return false
+//   //     return false;
 //   //   }
 //   // }
-//   // return true
+//   // return true;
 
-//     return sortA.map((elem) => elem * elem).every((element, index) => element === sortB[index])
+//   return sortA
+//     .map((elem) => elem * elem)
+//     .every((element, index) => element === sortB[index]);
 
 //   console.log(sortA);
 //   console.log(sortB);
@@ -193,114 +198,117 @@
 
 // console.log(same(a, b));
 
-// task9
+// // Task 9
 
-const people = [
-  {
-    name: "Alex",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Eva",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Eva"],
-  },
-  {
-    name: "Jhon",
-    know: [],
-  },
-];
-//нарцис  'Jhon'
-const people2 = [
-  {
-    name: "Alex",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Jhon",
-    know: [],
-  },
-  {
-    name: "Eva",
-    know: [],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Eva"],
-  },
-];
-//немає нарциса'
-const people3 = [
-  {
-    name: "Alex",
-    know: ["Alex", "Eva"],
-  },
-  {
-    name: "Jhon",
-    know: [],
-  },
-  {
-    name: "Eva",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Eva"],
-  },
-];
-//немає нарциса
-const people4 = [
-  {
-    name: "Alex",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Jhon",
-    know: ["Eva"],
-  },
-  {
-    name: "Eva",
-    know: ["Alex", "Jhon"],
-  },
-  {
-    name: "Ivan",
-    know: ["Jhon", "Eva"],
-  },
-];
-//немає нарциса'
-//Нарциса знають всі, нарцис незнає нікого
+// const people = [
+//   {
+//     name: "Alex",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Eva",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Eva"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: [],
+//   },
+// ];
+// //нарцис  'Jhon'
 
-const narName = (people) => {
-  const narc = people.find(({ know }) => know.length === 0);
-  if (!narc) {
-    console.log("немає нарциса");
-    return;
-  }
-  console.log(narc);
-  // const result = people.every(element) => { element.know.includes(narc.name) }
-  const result = people.every((element) => {
-    if (element.name === narc.name) {
-      return true;
-    }
-    return element.know.includes(narc.name);
-  });
+// const people2 = [
+//   {
+//     name: "Alex",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: [],
+//   },
+//   {
+//     name: "Eva",
+//     know: [],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Eva"],
+//   },
+// ];
+// //немає нарциса'
 
-  if (result) {
-    console.log("нарцис:", narc.name);
-  } else {
-    console.log("немає нарциса");
-  }
-};
+// const people3 = [
+//   {
+//     name: "Alex",
+//     know: ["Alex", "Eva"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: [],
+//   },
+//   {
+//     name: "Eva",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Eva"],
+//   },
+// ];
+// //немає нарциса
 
-narName(people);
-narName(people2);
-narName(people3);
-narName(people4);
+// const people4 = [
+//   {
+//     name: "Alex",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Jhon",
+//     know: ["Eva"],
+//   },
+//   {
+//     name: "Eva",
+//     know: ["Alex", "Jhon"],
+//   },
+//   {
+//     name: "Ivan",
+//     know: ["Jhon", "Eva"],
+//   },
+// ];
+// //немає нарциса
+// //Нарциса знають всі, нарцис незнає нікого
 
-// TASK 8
+// const narName = (people) => {
+//   const narc = people.find(({ know }) => know.length === 0);
+//   if (!narc) {
+//     console.log("немає нарциса");
+//     return;
+//   }
+//   console.log(narc);
+//   // const result = people.every(element) => { element.know.includes(narc.name) }
+//   const result = people.every((element) => {
+//     if (element.name === narc.name) {
+//       return true;
+//     }
+//     return element.know.includes(narc.name);
+//   });
+
+//   if (result) {
+//     console.log("нарцис:", narc.name);
+//   } else {
+//     console.log("немає нарциса");
+//   }
+// };
+
+// narName(people);
+// narName(people2);
+// narName(people3);
+// narName(people4);
+
+// // Task 10
 
 // const findAllGenres = (books) => {
 //   return books
@@ -312,24 +320,102 @@ narName(people4);
 // };
 
 // console.log(findAllGenres(books));
-const vehicles = [
-  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
-  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
-  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
-  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
-  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
-  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
-  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
-  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
-  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
-  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
-];
-//1.Реалізувати фільтр за властивістю amount і отримати
-// Тільки назва моделі
-const filteredModels = vehicles.filter(({ amount }) => amount >= 12).map(({model}) => model);
-console.log(filteredModels);
 
-//2.Отримати машини на розпродажі і сортувати за зменшенням ціни
-const onSales = vehicles.filter(({onSale}) => onSale).sort((a, b) => b.price - a.price);
- console.table(onSales);
+// // Task 11
 
+// const vehicles = [
+//   {
+//     make: "Honda",
+//     model: "CR-V",
+//     type: "suv",
+//     amount: 14,
+//     price: 24045,
+//     onSale: true,
+//   },
+//   {
+//     make: "Honda",
+//     model: "Accord",
+//     type: "sedan",
+//     amount: 2,
+//     price: 22455,
+//     onSale: true,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "Mazda 6",
+//     type: "sedan",
+//     amount: 8,
+//     price: 24195,
+//     onSale: false,
+//   },
+//   {
+//     make: "Mazda",
+//     model: "CX-9",
+//     type: "suv",
+//     amount: 7,
+//     price: 31520,
+//     onSale: true,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "4Runner",
+//     type: "suv",
+//     amount: 19,
+//     price: 34210,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Sequoia",
+//     type: "suv",
+//     amount: 16,
+//     price: 45560,
+//     onSale: false,
+//   },
+//   {
+//     make: "Toyota",
+//     model: "Tacoma",
+//     type: "truck",
+//     amount: 4,
+//     price: 24320,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "F-150",
+//     type: "truck",
+//     amount: 11,
+//     price: 27110,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Fusion",
+//     type: "sedan",
+//     amount: 13,
+//     price: 22120,
+//     onSale: true,
+//   },
+//   {
+//     make: "Ford",
+//     model: "Explorer",
+//     type: "suv",
+//     amount: 6,
+//     price: 31660,
+//     onSale: false,
+//   },
+// ];
+
+// // 1. Реалізувати фільтр за властивістю amount і отримати тільки назва моделі
+// const filteredModels = vehicles
+//   .filter(({ amount }) => amount >= 12)
+//   .map(({ model }) => model);
+
+// console.log(filteredModels);
+
+// // 2. Отримати машини на розпродажі і сортувати за зменшенням ціни
+// const onSales = vehicles
+//   .filter(({ onSale }) => onSale)
+//   .sort((a, b) => b.price - a.price);
+
+// console.table(onSales);
