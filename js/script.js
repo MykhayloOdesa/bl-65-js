@@ -279,7 +279,7 @@
 //   },
 // ];
 // //немає нарциса
-// //Нарциса знають всі, нарцис незнає нікого
+// //Нарциса знають всі, нарцис не знає нікого
 
 // const narName = (people) => {
 //   const narc = people.find(({ know }) => know.length === 0);
@@ -288,7 +288,7 @@
 //     return;
 //   }
 //   console.log(narc);
-//   // const result = people.every(element) => { element.know.includes(narc.name) }
+
 //   const result = people.every((element) => {
 //     if (element.name === narc.name) {
 //       return true;
