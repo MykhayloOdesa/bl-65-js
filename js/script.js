@@ -453,41 +453,84 @@
 
 // ===============
 
-class UnsplashAPI {
-  #query = "";
-  #page = 1;
-  #per_page;
-  constructor({ per_page = 12 } = {}) {
-    this.#per_page = per_page;
-  }
-  getPhotos() {
-    console.log({
-      query: this.#query,
-      page: this.#page,
-      per_page: this.#per_page,
-    });
-    console.log("Back-End Request");
-  }
-  incrementPage() {
-    this.#page += 1;
-  }
-  resetPage() {
-    this.#page = 1;
-  }
-  get query() {
-    return this.#query;
-  }
-  set query(newEntry) {
-    this.#query = newEntry;
-  }
-}
+// class UnsplashAPI {
+//   #query = "";
+//   #page = 1;
+//   #per_page;
+//   constructor({ per_page = 12 } = {}) {
+//     this.#per_page = per_page;
+//   }
+//   getPhotos() {
+//     console.log({
+//       query: this.#query,
+//       page: this.#page,
+//       per_page: this.#per_page,
+//     });
+//     console.log("Back-End Request");
+//   }
+//   incrementPage() {
+//     this.#page += 1;
+//   }
+//   resetPage() {
+//     this.#page = 1;
+//   }
+//   get query() {
+//     return this.#query;
+//   }
+//   set query(newEntry) {
+//     this.#query = newEntry;
+//   }
+// }
 
-const unsplashAPI = new UnsplashAPI();
-unsplashAPI.query = "cat";
-unsplashAPI.getPhotos();
-unsplashAPI.incrementPage();
-unsplashAPI.incrementPage();
-unsplashAPI.incrementPage();
-unsplashAPI.getPhotos();
-unsplashAPI.resetPage();
-console.log(unsplashAPI);
+// const unsplashAPI = new UnsplashAPI();
+// unsplashAPI.query = "cat";
+// unsplashAPI.getPhotos();
+// unsplashAPI.incrementPage();
+// unsplashAPI.incrementPage();
+// unsplashAPI.incrementPage();
+// unsplashAPI.getPhotos();
+// unsplashAPI.resetPage();
+// console.log(unsplashAPI);
+
+// =======worker
+//5. Створити клас Worker, у якого є властивості name, age, salary.
+//У класу Worker є метод getSalary.
+//Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
+//і який успадковує клас Worker, додаючи метод getHierarchyLevel
+//Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
+
+// class Worker {
+//   static Level = {middle: "middle", junior: "junior", senior: "senior"}
+//   constructor({name, age, salary} ={}) {
+//     this.name =name;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+//   getSalary() {
+//     return this.salary;
+//   }
+  
+// }
+// const developer = new Worker({name: "Petro", age: 29, salary: 55000});
+// console.log(developer.getSalary());
+// console.log(developer);
+
+// class TopLevelWorker extends Worker{
+//   constructor(obj, hierarchyLevel) {
+//     super(obj);
+//     this.hierarchyLevel = hierarchyLevel;
+
+//   }
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+
+// const middleDeveloper = new TopLevelWorker({name: "Vasyl", age: 88, salary: 66000}, Worker.Level.middle );
+// console.log(middleDeveloper);
+// console.log(middleDeveloper.getHierarchyLevel());
+// console.log(middleDeveloper.__proto__ === TopLevelWorker.prototype);
+// console.log(developer.__proto__ === Worker.prototype);
+// console.log(developer.prototype);
+// console.log(Worker.__proto__ === Function.prototype);
+
