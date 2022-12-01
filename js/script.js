@@ -422,31 +422,72 @@
 
 // ********************************
 
-class Client {
-  #login;
-  #email;
-  constructor(login, email) {
-    this.#login = login;
-    this.#email = email;
+// class Client {
+//   #login;
+//   #email;
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+//   get login() {
+//     return this.#login;
+//   }
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+//   get email() {
+//     return this.#email;
+//   }
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// const client1 = new Client("mango", "test@mail.com");
+// console.log(client1);
+
+// console.log(client1.email);
+
+// client1.email = "rtrt@dfd.fd";
+// console.log(client1.email);
+
+// ===============
+
+class UnsplashAPI {
+  #query = "";
+  #page = 1;
+  #per_page;
+  constructor({ per_page = 12 } = {}) {
+    this.#per_page = per_page;
   }
-  get login() {
-    return this.#login;
+  getPhotos() {
+    console.log({
+      query: this.#query,
+      page: this.#page,
+      per_page: this.#per_page,
+    });
+    console.log("Back-End Request");
   }
-  set login(newLogin) {
-    this.#login = newLogin;
+  incrementPage() {
+    this.#page += 1;
   }
-  get email() {
-    return this.#email;
+  resetPage() {
+    this.#page = 1;
   }
-  set email(newEmail) {
-    this.#email = newEmail;
+  get query() {
+    return this.#query;
+  }
+  set query(newEntry) {
+    this.#query = newEntry;
   }
 }
 
-const client1 = new Client("mango", "test@mail.com");
-console.log(client1);
-
-console.log(client1.email);
-
-client1.email = "rtrt@dfd.fd";
-console.log(client1.email);
+const unsplashAPI = new UnsplashAPI();
+unsplashAPI.query = "cat";
+unsplashAPI.getPhotos();
+unsplashAPI.incrementPage();
+unsplashAPI.incrementPage();
+unsplashAPI.incrementPage();
+unsplashAPI.getPhotos();
+unsplashAPI.resetPage();
+console.log(unsplashAPI);
