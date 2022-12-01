@@ -419,3 +419,34 @@
 //   .sort((a, b) => b.price - a.price);
 
 // console.table(onSales);
+
+// ********************************
+
+class Client {
+  #login;
+  #email;
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+  get login() {
+    return this.#login;
+  }
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+  get email() {
+    return this.#email;
+  }
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+const client1 = new Client("mango", "test@mail.com");
+console.log(client1);
+
+console.log(client1.email);
+
+client1.email = "rtrt@dfd.fd";
+console.log(client1.email);
