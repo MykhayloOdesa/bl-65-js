@@ -533,4 +533,17 @@
 // console.log(developer.__proto__ === Worker.prototype);
 // console.log(developer.prototype);
 // console.log(Worker.__proto__ === Function.prototype);
+// console.log(Function.prototype.__proto__ === Object.prototype);
+// console.log(Object.prototype.__proto__);
+// console.log(Function.prototype.__proto__.__proto__);
+// console.log(Worker.__proto__.__proto__.__proto__);
+// console.log(Worker.prototype.__proto__ === Object.prototype);
+// console.log(middleDeveloper.__proto__.__proto__.__proto__.__proto__);
 
+// const age = 21;
+// // console.log(age.__proto__ === Number.prototype);
+// console.log(Number.prototype.__proto__ === Object.prototype);
+// console.log(Number.__proto__ === Function.prototype);
+// console.log(Array.__proto__ === Function.prototype);
+// console.log(Function.__proto__ === Function.prototype);
+// console.log(Object.prototype);
