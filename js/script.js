@@ -509,7 +509,7 @@
 //   getSalary() {
 //     return this.salary;
 //   }
-  
+
 // }
 // const developer = new Worker({name: "Petro", age: 29, salary: 55000});
 // console.log(developer.getSalary());
@@ -547,3 +547,37 @@
 // console.log(Array.__proto__ === Function.prototype);
 // console.log(Function.__proto__ === Function.prototype);
 // console.log(Object.prototype);
+
+//1. Створити маркований перелік.
+//Створити кнопки "Add" "Remove", які змінюватимуть склад списку
+//Створити input з якого будемо отримувати значення, яке буде в li
+//* Парним li вказати червоне тло, непарним - синім
+//Для виконання завдання використовуйте createElement
+
+const container = document.querySelector(".js-container");
+
+const input = document.createElement("input");
+const addBtn = document.createElement("button");
+const removeBtn = document.createElement("button");
+const list = document.createElement("ol");
+
+container.append(input, addBtn, removeBtn, list);
+addBtn.textContent = "ADD";
+removeBtn.textContent = "REMOVE";
+
+addBtn.addEventListener("click", () => {
+  console.log(input.value);
+  const markupItem = document.createElement("li");
+  markupItem.textContent = input.value ? input.value : "default value";
+  list.append(markupItem);
+  const isEvent = list.children.length % 2 === 0;
+  markupItem.style.backgroundColor = isEvent ? "red" : " blue";
+  input.value = "";
+});
+
+removeBtn.addEventListener("click", () => {
+  if (!list.hasChildNodes()) return;
+  list.lastElementChild.remove();
+});
+
+console.log(Notiflix);
