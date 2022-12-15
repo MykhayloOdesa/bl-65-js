@@ -554,30 +554,82 @@
 //* Парним li вказати червоне тло, непарним - синім
 //Для виконання завдання використовуйте createElement
 
-const container = document.querySelector(".js-container");
+// const container = document.querySelector(".js-container");
 
-const input = document.createElement("input");
-const addBtn = document.createElement("button");
-const removeBtn = document.createElement("button");
-const list = document.createElement("ol");
+// const input = document.createElement("input");
+// const addBtn = document.createElement("button");
+// const removeBtn = document.createElement("button");
+// const list = document.createElement("ol");
 
-container.append(input, addBtn, removeBtn, list);
-addBtn.textContent = "ADD";
-removeBtn.textContent = "REMOVE";
+// container.append(input, addBtn, removeBtn, list);
+// addBtn.textContent = "ADD";
+// removeBtn.textContent = "REMOVE";
 
-addBtn.addEventListener("click", () => {
-  console.log(input.value);
-  const markupItem = document.createElement("li");
-  markupItem.textContent = input.value ? input.value : "default value";
-  list.append(markupItem);
-  const isEvent = list.children.length % 2 === 0;
-  markupItem.style.backgroundColor = isEvent ? "red" : " blue";
-  input.value = "";
-});
+// addBtn.addEventListener("click", () => {
+//   console.log(input.value);
+//   const markupItem = document.createElement("li");
+//   markupItem.textContent = input.value ? input.value : "default value";
+//   list.append(markupItem);
+//   const isEvent = list.children.length % 2 === 0;
+//   markupItem.style.backgroundColor = isEvent ? "red" : " blue";
+//   input.value = "";
+// });
 
-removeBtn.addEventListener("click", () => {
-  if (!list.hasChildNodes()) return;
-  list.lastElementChild.remove();
-});
+// removeBtn.addEventListener("click", () => {
+//   if (!list.hasChildNodes()) return;
+//   list.lastElementChild.remove();
+// });
 
-console.log(Notiflix);
+// console.log(Notiflix);
+
+// task2
+
+//Створити невелику гру:)
+// - Спочатку на екрані користувача відображатиметься
+//яка - то форма (коло, квадрат, прямокутник)
+// - При натисканні на неї в рандомному порядку форма повинна
+//змінюватися на іншу
+// - Форма щоразу повинна з'являтися у різних місцях на сторінці
+// - Колір форми в рандомному порядку змінюється,
+function getRangomColor() {
+  return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
+}
+
+function getRandomHex() {
+  return Math.round(Math.random() * 256)
+    .toString(16)
+    .padStart(2, '0');
+}
+
+
+const forms = [
+  'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
+  'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 200px; height: 100px; border-radius: 100px / 50px;',
+  'width: 150px; height: 100px; transform: skew(20deg);',
+];
+const randomither = max => {
+  return Math.floor(Math.random() * max);
+};
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+const form = document.createElement('div');
+document.body.append(form);
+onFormClick();
+form.addEventListener('click', onFormClick);
+function onFormClick() {
+  form.style.cssText = forms[randomither(forms.length)];
+form.style.backgroundColor = getRangomColor();
+form.style.position = "absolute";
+let height = 100 - form.clientHeight*100/document.documentElement.clientHeight;
+form.style.top = `${randomither(height)}%`;
+let width = 100 - form.clientWidth*100/document.documentElement.clientWidth;
+form.style.left = `${randomither(width)}%`;
+}
+
+
+
+
