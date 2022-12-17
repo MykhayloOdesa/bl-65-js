@@ -105,6 +105,9 @@
 // }
 // console.log(total);
 
+// "emmet.showAbbreviationSuggestions": true,
+// "emmet.showSuggestionsAsSnippets": true,
+
 // // Task5
 // // Напишіть цикл, який пропонує ввести
 // // число більше 100 через prompt.
@@ -406,21 +409,35 @@
 //   },
 // ];
 
-// // 1. Реалізувати фільтр за властивістю amount і отримати тільки назва моделі
+// // 11.1. Реалізувати фільтр за властивістю amount і отримати тільки назва моделі
 // const filteredModels = vehicles
 //   .filter(({ amount }) => amount >= 12)
 //   .map(({ model }) => model);
 
 // console.log(filteredModels);
 
-// // 2. Отримати машини на розпродажі і сортувати за зменшенням ціни
+// // 11.2. Отримати машини на розпродажі і сортувати за зменшенням ціни
 // const onSales = vehicles
 //   .filter(({ onSale }) => onSale)
 //   .sort((a, b) => b.price - a.price);
 
 // console.table(onSales);
 
-// ********************************
+// *****HW*****
+
+// Знайти перший унікальний символ у рядку
+// У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
+
+// let input1 = 'leetcode'; // 0
+// let input2 = 'loveleetcode'; // 2
+// let input3 = 'aabb'; // -1
+
+// *****
+
+// // Task 12
+// // Напиши клас Client який створює об'єкт з властивостями login email
+// // Оголоси приватні властивості #login #email,
+// // доступ до яких зроби через геттер та сеттер login email
 
 // class Client {
 //   #login;
@@ -451,7 +468,7 @@
 // client1.email = "rtrt@dfd.fd";
 // console.log(client1.email);
 
-// ===============
+// // Task 13
 
 // class UnsplashAPI {
 //   #query = "";
@@ -492,41 +509,42 @@
 // unsplashAPI.resetPage();
 // console.log(unsplashAPI);
 
-// =======worker
-//5. Створити клас Worker, у якого є властивості name, age, salary.
-//У класу Worker є метод getSalary.
-//Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
-//і який успадковує клас Worker, додаючи метод getHierarchyLevel
-//Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
+// // Task 14
+// // Створити клас Worker, у якого є властивості name, age, salary.
+// // У класу Worker є метод getSalary.
+// // Створити клас TopLevelWorker, у якого є властивість hierarchyLevel і який успадковує клас Worker,
+// // додаючи метод getHierarchyLevel
+// // Реалізувати завдання за допомогою ES5 прототипів та ES6 класів
 
 // class Worker {
-//   static Level = {middle: "middle", junior: "junior", senior: "senior"}
-//   constructor({name, age, salary} ={}) {
-//     this.name =name;
+//   static Level = { middle: "middle", junior: "junior", senior: "senior" };
+//   constructor({ name, age, salary } = {}) {
+//     this.name = name;
 //     this.age = age;
 //     this.salary = salary;
 //   }
 //   getSalary() {
 //     return this.salary;
 //   }
-
 // }
-// const developer = new Worker({name: "Petro", age: 29, salary: 55000});
+// const developer = new Worker({ name: "Petro", age: 29, salary: 55000 });
 // console.log(developer.getSalary());
 // console.log(developer);
 
-// class TopLevelWorker extends Worker{
+// class TopLevelWorker extends Worker {
 //   constructor(obj, hierarchyLevel) {
 //     super(obj);
 //     this.hierarchyLevel = hierarchyLevel;
-
 //   }
 //   getHierarchyLevel() {
 //     return this.hierarchyLevel;
 //   }
 // }
 
-// const middleDeveloper = new TopLevelWorker({name: "Vasyl", age: 88, salary: 66000}, Worker.Level.middle );
+// const middleDeveloper = new TopLevelWorker(
+//   { name: "Vasyl", age: 88, salary: 66000 },
+//   Worker.Level.middle
+// );
 // console.log(middleDeveloper);
 // console.log(middleDeveloper.getHierarchyLevel());
 // console.log(middleDeveloper.__proto__ === TopLevelWorker.prototype);
@@ -540,19 +558,28 @@
 // console.log(Worker.prototype.__proto__ === Object.prototype);
 // console.log(middleDeveloper.__proto__.__proto__.__proto__.__proto__);
 
+// *****
+
 // const age = 21;
-// // console.log(age.__proto__ === Number.prototype);
+// console.log(age.__proto__ === Number.prototype);
 // console.log(Number.prototype.__proto__ === Object.prototype);
 // console.log(Number.__proto__ === Function.prototype);
 // console.log(Array.__proto__ === Function.prototype);
 // console.log(Function.__proto__ === Function.prototype);
 // console.log(Object.prototype);
 
-//1. Створити маркований перелік.
-//Створити кнопки "Add" "Remove", які змінюватимуть склад списку
-//Створити input з якого будемо отримувати значення, яке буде в li
-//* Парним li вказати червоне тло, непарним - синім
-//Для виконання завдання використовуйте createElement
+// *****HW*****
+
+// https://techrocks.ru/2020/02/20/9-projects-created-with-vanilla-javascript/
+
+// *****
+
+// // Task 15
+// // Створити маркований перелік.
+// // Створити кнопки "Add" "Remove", які змінюватимуть склад списку
+// // Створити input з якого будемо отримувати значення, яке буде в li
+// // *Парним li вказати червоне тло, непарним - синім
+// // Для виконання завдання використовуйте createElement
 
 // const container = document.querySelector(".js-container");
 
@@ -580,17 +607,13 @@
 //   list.lastElementChild.remove();
 // });
 
-// console.log(Notiflix);
+// // Task 16
+// // Створити невелику гру:)
+// // - Спочатку на екрані користувача відображатиметься яка-то форма (коло, квадрат, прямокутник)
+// // - При натисканні на неї в рандомному порядку форма повинна змінюватися на іншу
+// // - Форма щоразу повинна з'являтися у різних місцях на сторінці
+// // - Колір форми в рандомному порядку змінюється
 
-// task2
-
-//Створити невелику гру:)
-// - Спочатку на екрані користувача відображатиметься
-//яка - то форма (коло, квадрат, прямокутник)
-// - При натисканні на неї в рандомному порядку форма повинна
-//змінюватися на іншу
-// - Форма щоразу повинна з'являтися у різних місцях на сторінці
-// - Колір форми в рандомному порядку змінюється,
 // function getRangomColor() {
 //   return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
 // }
@@ -598,44 +621,49 @@
 // function getRandomHex() {
 //   return Math.round(Math.random() * 256)
 //     .toString(16)
-//     .padStart(2, '0');
+//     .padStart(2, "0");
 // }
 
 // const forms = [
-//   'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
-//   'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
-//   'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
-//   'width: 200px; height: 100px; border-radius: 100px / 50px;',
-//   'width: 150px; height: 100px; transform: skew(20deg);',
+//   "width: 100px; height: 100px; border-width: 1px; border-color: #000000",
+//   "width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000",
+//   "width: 150px; height: 100px; border-width: 1px; border-color: #000000",
+//   "width: 200px; height: 100px; border-radius: 100px / 50px;",
+//   "width: 150px; height: 100px; transform: skew(20deg);",
 // ];
-// const randomither = max => {
+
+// const randomither = (max) => {
 //   return Math.floor(Math.random() * max);
 // };
 
-// // function getRandomHexColor() {
-// //   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// // }
-// const form = document.createElement('div');
-// document.body.append(form);
-// onFormClick();
-// form.addEventListener('click', onFormClick);
-// function onFormClick() {
-//   form.style.cssText = forms[randomither(forms.length)];
-// form.style.backgroundColor = getRangomColor();
-// form.style.position = "absolute";
-// let height = 100 - form.clientHeight*100/document.documentElement.clientHeight;
-// form.style.top = `${randomither(height)}%`;
-// let width = 100 - form.clientWidth*100/document.documentElement.clientWidth;
-// form.style.left = `${randomither(width)}%`;
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 // }
 
-const listEl = document.querySelector('.js-accordion-list');
-console.log(listEl);
-listEl.addEventListener('click', onBtnClick);
+// const form = document.createElement("div");
+// document.body.append(form);
+// onFormClick();
+// form.addEventListener("click", onFormClick);
 
-function onBtnClick(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  event.target.nextElementSibling.classList.toggle('active');
-}
+// function onFormClick() {
+//   form.style.cssText = forms[randomither(forms.length)];
+//   form.style.backgroundColor = getRangomColor();
+//   form.style.position = "absolute";
+//   let height =
+//     100 - (form.clientHeight * 100) / document.documentElement.clientHeight;
+//   form.style.top = `${randomither(height)}%`;
+//   let width =
+//     100 - (form.clientWidth * 100) / document.documentElement.clientWidth;
+//   form.style.left = `${randomither(width)}%`;
+// }
+
+// const listEl = document.querySelector(".js-accordion-list");
+// console.log(listEl);
+// listEl.addEventListener("click", onBtnClick);
+
+// function onBtnClick(event) {
+//   if (event.target.nodeName !== "BUTTON") {
+//     return;
+//   }
+//   event.target.nextElementSibling.classList.toggle("active");
+// }
